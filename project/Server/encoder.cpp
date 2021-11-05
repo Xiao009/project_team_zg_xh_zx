@@ -34,6 +34,8 @@ int chunk_num = 0;
 int offset = 0;
 unsigned char* file;
 
+void SHA_256(SHA256_CTX *ctx, const BYTE data[])；
+
 void handle_input(int argc, char* argv[], int* payload_size) {
 	int x;
 	extern char *optarg;
@@ -89,7 +91,7 @@ static const WORD k[64] = {
 };
 
 
-void sha256(SHA256_CTX *ctx, const BYTE data[])
+void SHA_256(SHA256_CTX *ctx, const BYTE data[])
 {
 	WORD a, b, c, d, e, f, g, h, i, j, t1, t2, m[64];
 
@@ -102,7 +104,7 @@ void sha256(SHA256_CTX *ctx, const BYTE data[])
 	b = ctx->state[1];
 	c = ctx->state[2];
 	d = ctx->state[3];
-	e = ctx->state[4];
+	e = ctx->state[4];b
 	f = ctx->state[5];
 	g = ctx->state[6];
 	h = ctx->state[7];
